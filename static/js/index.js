@@ -71,12 +71,12 @@ function LED1_Off(){
   // called when a message arrives
   function onMessageArrived(message) {
 	  console.log("onMessageArrived:"+message.payloadString);
-	  if (message.destinationName="bryan.loaiza@unach.edu.ec/tema1"){
+	  if (message.destinationName=="bryan.loaiza@unach.edu.ec/tema1"){
 		  document.getElementById("sensor1").innerHTML=message.payloadString;
 	  
 	  }
 	  
-	  if (message.destinationName="bryan.loaiza@unach.edu.ec/tema3"){
+	  if (message.destinationName=="bryan.loaiza@unach.edu.ec/tema3"){
 		  document.getElementById("sensor2").innerHTML=message.payloadString;
 	  
 	  }
