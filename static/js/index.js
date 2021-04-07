@@ -58,10 +58,11 @@ function LED1_On() {
 	message = new Paho.MQTT.Message("sensor1");
 	message.destinationName = "bryan.loaiza@unach.edu.ec/tema2";
 	client.send(message);
-	document.getElementById("sensor1").innerHTML=message.payloadString;
-	
+	document.getElementById("sensor1").innerHTML=message.payloadString;	
   
 }
+
+
 
 function LED1_Off(){	
 	alert("led off");
@@ -70,5 +71,6 @@ function LED1_Off(){
 	message.destinationName = "bryan.loaiza@unach.edu.ec/tema2";
 	client.send(message);
 	document.getElementById("sensor2").innerHTML=message.payloadString;
+
 }
 
