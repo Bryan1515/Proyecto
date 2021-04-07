@@ -1,26 +1,5 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function LED1_On() {
-	alert("led on");
-	//console.log("led on");
-	document.getElementById("sensor1").innerHTML=message.payloadString;
-	message = new Paho.MQTT.Message("sensor1");
-	message.destinationName = "bryan.loaiza@unach.edu.ec/tema2";
-	client.send(message);
-  
-}
-
-function LED1_Off(){	
-	alert("led off");
-	//console.log("led off");
-	//document.getElementById("sensor1").innerHTML=message.payloadString;
-	message = new Paho.MQTT.Message("sensor2");
-	message.destinationName = "bryan.loaiza@unach.edu.ec/tema2";
-	client.send(message);
-}
-
-
-
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
   
@@ -65,9 +44,28 @@ function LED1_Off(){
   }
 
   // called when a message arrives
-  //function onMessageArrived(message) {
-    //console.log("onMessageArrived:"+message.payloadString);
-	 //document.getElementById("sensor1").innerHTML=message.payloadString;
-	 //document.getElementById("sensor2").innerHTML=message.payloadString;
+  function onMessageArrived(message) {
+    console.log("onMessageArrived:"+message.payloadString);
+	 document.getElementById("sensor1").innerHTML=message.payloadString;
+	 document.getElementById("sensor2").innerHTML=message.payloadString;
   }
+
+
+
+function LED1_On() {
+	alert("led on");
+	//console.log("led on");
+	message = new Paho.MQTT.Message("sensor1");
+	message.destinationName = "bryan.loaiza@unach.edu.ec/tema2";
+	client.send(message);
   
+}
+
+function LED1_Off(){	
+	alert("led off");
+	//console.log("led off");
+	message = new Paho.MQTT.Message("sensor2");
+	message.destinationName = "bryan.loaiza@unach.edu.ec/tema2";
+	client.send(message);
+}
+
