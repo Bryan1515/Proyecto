@@ -47,12 +47,12 @@
   // called when a message arrives
   function onMessageArrived(message) {
 	  console.log("onMessageArrived:"+message.payloadString);
-	  if (message.destinationName="tema1"){
+	  if (message.destinationName="bryan.loaiza@unach.edu.ec/tema1"){
 		  document.getElementById("sensor1").innerHTML=message.payloadString;
 	  
 	  }
 	  
-	  if (message.destinationName="tema2"){
+	  if (message.destinationName="bryan.loaiza@unach.edu.ec/tema3"){
 		  document.getElementById("sensor2").innerHTML=message.payloadString;
 	  
 	  }
