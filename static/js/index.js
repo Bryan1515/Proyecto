@@ -19,9 +19,6 @@
     console.log("Conectado...");
     client.subscribe("bryan.loaiza@unach.edu.ec/tema1");
     client.subscribe("bryan.loaiza@unach.edu.ec/tema3");
-    message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "bryan.loaiza@unach.edu.ec/tema2";
-    client.send(message);
 	
   }
 
@@ -64,7 +61,6 @@ function senso2(){
 
   // called when a message arrives
   function onMessageArrived(message) {
-	  console.log("onMessageArrived:"+message.payloadString);
 	  if (message.destinationName=="bryan.loaiza@unach.edu.ec/tema1"){
 		  document.getElementById("sensor1").innerHTML=message.payloadString;
 	  
